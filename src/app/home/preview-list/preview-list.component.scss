@@ -1,0 +1,33 @@
+.playlist {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+  margin: 1rem 0;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--bg-secondary);
+
+  .playlist__item {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: var(--bg-secondary);
+    h3 {
+      margin: 0;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+    img {
+      width: 4rem;
+      height: 4rem;
+      object-fit: cover;
+      margin-right: 1rem;
+      border-radius: 0.5rem;
+    }
+    &:hover {
+      box-shadow: 0 0 5px 1px var(--secondary);
+      transform: scale(1.03);
+      color: var(--light-success);
+    }
+  }
+}

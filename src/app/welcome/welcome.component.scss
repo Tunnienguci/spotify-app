@@ -1,0 +1,33 @@
+.row {
+  background-image: url("../../assets/svg/tutorial-background.svg");
+  background-color: var(--bg-secondary);
+  background-size: cover;
+  background-position: calc(100% - 25rem) calc(100% + 1rem);
+  height: 100%;
+  .title {
+    text-align: center;
+    padding: 5rem 0;
+    color: var(--light-success);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+    p {
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 5rem;
+    }
+    button {
+      font-size: 1.5rem;
+      font-weight: 700;
+      padding: 1rem 2.5rem;
+      border-radius: 3rem;
+      background-color: var(--bg-info);
+      color: var(--primary);
+    }
+  }
+}

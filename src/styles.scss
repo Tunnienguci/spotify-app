@@ -1,0 +1,32 @@
+/* Importing Bootstrap SCSS file. */
+@import url("https://fonts.cdnfonts.com/css/codec-pro");
+@import "~bootstrap/scss/bootstrap";
+
+:root {
+  --bg-primary: #290148;
+  --bg-secondary: #400073;
+  --bg-success: #19e68c;
+  --bg-info: #00ffff;
+  --bg-light: #d7dbff;
+  --bg-danger: #b81021;
+  --primary: #290148;
+  --secondary: #400073;
+  --light: #d7dbff;
+  --success: #1db954;
+  --light-success: #ccf55e;
+}
+
+button,
+input,
+textarea {
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+body {
+  font-family: "Codec Pro", sans-serif;
+}
+
+.dropdown-menu {
+  min-width: 100% !important;
+}

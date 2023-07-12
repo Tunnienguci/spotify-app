@@ -1,0 +1,45 @@
+.search {
+  padding: 1rem;
+  background-color: var(--bg-secondary);
+  border-radius: 0.5rem;
+  h4 {
+    font-weight: 600;
+    color: #fff;
+  }
+  .search-result {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+    color: #fff;
+    margin: 1rem 0;
+    .search-result-item {
+      width: 100%;
+      border-radius: 0.5rem;
+      background-color: var(--bg-primary);
+      padding: 1rem;
+      img {
+        width: 100%;
+        height: 10rem;
+        object-fit: cover;
+      }
+      h3 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin: 0.5rem 0;
+        padding: 0;
+      }
+      p {
+        font-size: 1rem;
+        margin: 0;
+        padding: 0;
+      }
+      &:hover {
+        background-color: var(--bg-primary);
+        cursor: pointer;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+        transform: scale(1.05);
+        color: var(--light-success);
+      }
+    }
+  }
+}

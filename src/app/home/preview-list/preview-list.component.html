@@ -1,0 +1,18 @@
+<div class="playlist">
+  <div
+    class="playlist__item"
+    *ngFor="let item of playlist"
+    [routerLink]="['/playlist', item.id]"
+  >
+    <div class="playlist__item__image">
+      <img src="{{ item.images[0].url }}" />
+    </div>
+    <div class="playlist__item__info">
+      <div class="playlist__item__info__title">
+        <h3>
+          {{ item.name }}
+        </h3>
+      </div>
+    </div>
+  </div>
+</div>

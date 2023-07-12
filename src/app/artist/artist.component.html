@@ -1,0 +1,44 @@
+<div class="artist w-50 mx-auto">
+  <div class="artist__header">
+    <img src="{{ item.images[0].url }}" class="artist__header-img" />
+    <div class="artist__header-title">
+      <h1>{{ item.name }}</h1>
+      <p *ngIf="item.followers.total > 0">
+        {{ item.followers.total | number }} followers
+      </p>
+      <a
+        class="btn btn-success"
+        href="{{ item.external_urls.spotify }}"
+        target="_blank"
+        >Open in Spotify</a
+      >
+    </div>
+  </div>
+  <div class="artist__body">
+    <div class="artist__body-albums">
+      <h3>Albums</h3>
+      <div class="artist__body-albums-list">
+        <div
+          class="artist__body-albums-list-item"
+          *ngFor="let album of item.albums"
+          [routerLink]="['/album', album.id]"
+        >
+          <img src="{{ album.images[0].url }}" />
+          <p>{{ album.name | textLength : 15 }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="artist__body-albums">
+      <h3>Track</h3>
+      <div class="artist__body-albums-list">
+        <div
+          class="artist__body-albums-list-item"
+          *ngFor="let track of item.tracks"
+        >
+          <img src="{{ track.album.images[0].url }}" />
+          <p>{{ track.name | textLength : 20 }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

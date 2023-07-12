@@ -1,0 +1,51 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-secondary);
+  color: #fff;
+  top: 0;
+  position: sticky;
+  z-index: 2;
+  padding: 1rem 0;
+  font-size: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  .navbar-logo {
+    font-size: 1.5rem;
+  }
+  .navbar-menu {
+    a {
+      padding: 1rem 2rem;
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+    .active {
+      border-bottom: 5px solid var(--light-success);
+      color: var(--light-success);
+    }
+  }
+  .navbar-profile {
+    display: flex;
+    border-radius: 2rem;
+    align-items: center;
+    padding: 0.1rem 0.5rem;
+    background: var(--bg-light);
+    color: var(--primary);
+    border: none;
+    font-weight: 700;
+    .navbar-profile-image {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      object-fit: cover;
+      padding: 0.1rem;
+    }
+    .navbar-profile-name {
+      font-size: 1rem;
+      margin: 0 1.5rem;
+    }
+  }
+}

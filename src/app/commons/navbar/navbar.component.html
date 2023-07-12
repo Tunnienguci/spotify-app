@@ -1,0 +1,35 @@
+<div class="navbar px-5">
+  <div class="navbar-logo">
+    <p class="m-0 font-weight-bold">
+      <i class="fa-brands fa-spotify mr-1"></i> Spotify
+    </p>
+  </div>
+  <div class="navbar-menu" *ngIf="isLoggedIn()">
+    <a [routerLink]="['home']" routerLinkActive="active">Homepage</a>
+    <a [routerLink]="['explore']" routerLinkActive="active">Explore</a>
+  </div>
+  <button
+    class="btn btn-primary navbar-profile px-5 py-2"
+    (click)="login()"
+    *ngIf="!isLoggedIn()"
+  >
+    Login
+  </button>
+  <div ngbDropdown class="text-start" *ngIf="isLoggedIn()">
+    <button
+      type="button"
+      class="btn btn-primary navbar-profile"
+      ngbDropdownToggle
+    >
+      <img class="navbar-profile-image" src="{{ User?.images[0]?.url }}" />
+      <div class="navbar-profile-name">
+        {{ User?.display_name }}
+      </div>
+    </button>
+    <div ngbDropdownMenu>
+      <button ngbDropdownItem [routerLink]="['profile']">Profile</button>
+      <button ngbDropdownItem>My Playlist</button>
+      <button ngbDropdownItem (click)="logout()">Logout</button>
+    </div>
+  </div>
+</div>
