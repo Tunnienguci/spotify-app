@@ -15,6 +15,25 @@
     </div>
   </div>
   <div class="artist__body">
+    <h3>TOP TRACKS</h3>
+    <div class="top-track">
+      <div
+        class="top__track-item"
+        *ngFor="let track of item.tracks; let i = index"
+      >
+        <div class="top__track-item-number">
+          <p class="m-0">{{ i + 1 }}</p>
+        </div>
+        <img
+          class="top_track-item-img mx-3"
+          src="{{ track.album.images[0].url }}"
+        />
+        <div class="top_track-item-title text-capitalize">
+          <h4 class="m-0">{{ track.name }}</h4>
+          <p class="m-0">{{ track.artists[0].name }}</p>
+        </div>
+      </div>
+    </div>
     <div class="artist__body-albums">
       <h3>Albums</h3>
       <div class="artist__body-albums-list">

@@ -1,1 +1,37 @@
-<p>profile works!</p>
+<div class="profile w-50 mx-auto">
+  <div class="profile__header">
+    <img src="{{ user.images[0].url }}" class="profile__header-img" />
+    <div class="profile__header-title">
+      <h1>{{ user.display_name }}</h1>
+      <p *ngIf="user.followers.total > 0">
+        {{ user.followers.total | number }} followers
+      </p>
+      <a
+        class="btn btn-success"
+        href="{{ user.external_urls.spotify }}"
+        target="_blank"
+        >Open in Spotify</a
+      >
+    </div>
+  </div>
+  <div class="profle__body">
+    <div class="top-track">
+      <div
+        class="top__track-item"
+        *ngFor="let track of topTracks; let i = index"
+      >
+        <div class="top__track-item-number">
+          <p class="m-0">{{ i + 1 }}</p>
+        </div>
+        <img
+          class="top_track-item-img mx-3"
+          src="{{ track.album.images[0].url }}"
+        />
+        <div class="top_track-item-title text-capitalize">
+          <h3 class="m-0">{{ track.name }}</h3>
+          <p class="m-0">{{ track.artists[0].name }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

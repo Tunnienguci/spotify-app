@@ -19,6 +19,8 @@ export class ProfileService {
   }
 
   getTopTracks() {
-    return this.http.get('https://api.spotify.com/v1/me/top/tracks');
+    return this.http.get(
+      'https://api.spotify.com/v1/me/top/tracks' + '?limit=5'
+    );
   }
 }

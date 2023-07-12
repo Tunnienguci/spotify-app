@@ -1,4 +1,4 @@
-<div class="footer">
+<div class="footer" *ngIf="checkUrl()">
   <div class="footer-links">
     <p class="m-0 font-weight-bold h1">
       <i class="fa-brands fa-spotify mr-1"></i> Spotify
@@ -28,7 +28,7 @@
     <a href="#">Developer Policy</a>
   </div>
 </div>
-<div class="footer">
+<div class="footer" *ngIf="checkUrl()">
   <a href="">Legal</a>
   <a href="" class="mx-5">Privacy Center</a>
   <a href="">© 2023 Spotify AB</a>

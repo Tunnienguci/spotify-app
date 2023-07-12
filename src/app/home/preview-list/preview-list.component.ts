@@ -11,7 +11,6 @@ export class PreviewListComponent implements OnInit {
   constructor(private ArtistServices: ArtistService) {
     this.ArtistServices.getMyPlaylist().subscribe((data) => {
       this.playlist = data['items'];
-      // limit 6
       this.playlist = this.playlist.slice(0, 6);
     });
   }
