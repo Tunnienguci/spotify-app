@@ -1719,7 +1719,6 @@ class AuthService {
         this.token = '';
         this.client_id = 'b3367fa6e0ad4cdfa803f930d8f8b8cb';
         this.client_secret = '22cc9fd47ccb4164976531e126056a71';
-        // callback: string = 'http://localhost:4200/home';
         this.callback = 'https://top-spotify.vercel.app/home';
         this.token = localStorage.getItem('token') || '';
         if (window.location.hash) {

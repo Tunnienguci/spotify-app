@@ -3476,8 +3476,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         this.baseUrl = 'https://accounts.spotify.com/authorize';
         this.token = '';
         this.client_id = 'b3367fa6e0ad4cdfa803f930d8f8b8cb';
-        this.client_secret = '22cc9fd47ccb4164976531e126056a71'; // callback: string = 'http://localhost:4200/home';
-
+        this.client_secret = '22cc9fd47ccb4164976531e126056a71';
         this.callback = 'https://top-spotify.vercel.app/home';
         this.token = localStorage.getItem('token') || '';
 

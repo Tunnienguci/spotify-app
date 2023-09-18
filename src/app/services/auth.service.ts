@@ -10,7 +10,6 @@ export class AuthService {
   token: string = '';
   client_id: string = 'b3367fa6e0ad4cdfa803f930d8f8b8cb';
   client_secret: string = '22cc9fd47ccb4164976531e126056a71';
-  // callback: string = 'http://localhost:4200/home';
   callback: string = 'https://top-spotify.vercel.app/home';
 
   constructor(private router: Router) {
