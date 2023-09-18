@@ -51,3 +51,19 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.5rem 0;
+  }
+
+  .navbar-menu {
+    display: none;
+  }
+
+  .navbar-profile {
+    .navbar-profile-name {
+      font-size: 1rem;
+    }
+  }
+}

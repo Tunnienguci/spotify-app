@@ -3,7 +3,7 @@
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 0.5rem;
 
-  .category__item {
+  .show__item {
     position: relative;
     img {
       width: 100%;
@@ -11,25 +11,31 @@
       object-fit: cover;
       border-radius: 0.5rem;
     }
-    .category__item__name p {
+    .show__item__name p {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       text-align: center;
       font-weight: 700;
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       display: none;
       color: var(--light-success);
     }
 
     &:hover {
-      .category__item__name p {
+      .show__item__name p {
         display: block;
       }
-      .category__item__image {
+      .show__item__image {
         filter: brightness(0.1);
       }
     }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .categories {
+    grid-template-columns: repeat(2, 1fr);
   }
 }

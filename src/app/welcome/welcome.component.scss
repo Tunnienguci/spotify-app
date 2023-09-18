@@ -31,3 +31,22 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .row {
+    background-position: calc(100% - 20rem) calc(100% + 1rem);
+    .title {
+      width: 100%;
+      h1 {
+        font-size: 2rem;
+      }
+      p {
+        font-size: 1rem;
+        margin: 1rem;
+      }
+      button {
+        font-size: 1rem;
+      }
+    }
+  }
+}

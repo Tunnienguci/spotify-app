@@ -7,10 +7,11 @@ import { ArtistService } from 'src/app/services/artist.service';
   styleUrls: ['./category.component.scss'],
 })
 export class CategoryComponent implements OnInit {
-  category: any;
+  show: any;
   constructor(private ArtistServices: ArtistService) {
-    this.ArtistServices.getCategory().subscribe((data: any) => {
-      this.category = data['categories']['items'];
+    this.ArtistServices.getShow().subscribe((data) => {
+      this.show = data['albums'].items;
+      console.log(this.show);
     });
   }
 

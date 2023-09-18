@@ -7,9 +7,9 @@ import { Injectable } from '@angular/core';
 export class ArtistService {
   constructor(private http: HttpClient) {}
 
-  getCategory() {
+  getShow() {
     return this.http.get(
-      'https://api.spotify.com/v1/browse/categories?locale=en_US&country=VN&limit=8&offset=5'
+      'https://api.spotify.com/v1/browse/new-releases?limit=12'
     );
   }
 

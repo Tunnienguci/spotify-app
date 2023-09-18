@@ -43,6 +43,6 @@ export class AuthService {
       this.client_id +
       '&response_type=token&redirect_uri=' +
       this.callback +
-      '&scope=user-read-private%20user-read-email%20user-top-read%20playlist-read-private%20playlist-read-collaborative%20playlist-modify-public%20playlist-modify-private';
+      '&scope=user-read-private%20user-read-email%20user-top-read%20playlist-read-private%20playlist-read-collaborative%20playlist-modify-public%20playlist-modify-private&show_dialog=true ';
   }
 }

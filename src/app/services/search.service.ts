@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { debounceTime } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -8,9 +10,9 @@ export class SearchService {
   baseUrl = 'https://api.spotify.com/v1/';
   constructor(private http: HttpClient) {}
 
-  search(query: string) {
+  search(query: string): Observable<any> {
     return this.http.get(
-      `${this.baseUrl}search?q=${query}&type=album%2Cplaylist%2Ctrack%2Cartist&market=VN&limit=4&include_external=audio`
+      `${this.baseUrl}search?q=${query}&type=track,artist,album,playlist&market=VN&limit=4`
     );
   }
 

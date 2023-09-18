@@ -1,6 +1,6 @@
-<div class="artist w-50 mx-auto">
+<div class="artist mx-auto">
   <div class="artist__header">
-    <img src="{{ item.images[0].url }}" class="artist__header-img" />
+    <img src="{{ item?.images[0]?.url }}" class="artist__header-img" />
     <div class="artist__header-title">
       <h1>{{ item.name }}</h1>
       <p *ngIf="item.followers.total > 0">
@@ -15,15 +15,24 @@
     </div>
   </div>
   <div class="artist__body">
-    <div class="artist__body-albums">
-      <h3>Playlists</h3>
-      <div class="artist__body-albums-list">
-        <div
-          class="artist__body-albums-list-item"
-          *ngFor="let playlist of trackList"
-        >
-          <img src="{{ playlist.track.album.images[0].url }}" />
-          <p>{{ playlist.track.name | textLength : 15 }}</p>
+    <h3>Playlists</h3>
+    <div class="top-track">
+      <div
+        class="top__track-item"
+        *ngFor="let playlist of trackList; let i = index"
+      >
+        <div class="top__track-item-number">
+          <p class="m-0">{{ i + 1 }}</p>
+        </div>
+        <img
+          class="top_track-item-img mx-lg-3"
+          src="{{ playlist.track.album?.images[0]?.url }}"
+        />
+        <div class="top_track-item-title text-capitalize">
+          <h4 class="m-0">{{ playlist.track.name | textLength : 35 }}</h4>
+          <p class="m-0">
+            {{ playlist.track.artists[0].name }}
+          </p>
         </div>
       </div>
     </div>

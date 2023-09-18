@@ -8,38 +8,52 @@
     (keyup)="search()"
   />
 </form>
-<div class="search w-50 mx-auto" *ngIf="searchItem.length > 0">
-  <!-- Artist -->
+<div
+  class="search w-50 mx-auto"
+  *ngIf="
+    searchResultsAlbum.length > 0 ||
+    searchResultsArtist.length > 0 ||
+    searchResultsPlaylist.length > 0
+  "
+>
   <h4 *ngIf="searchResultsArtist.length > 0">Artists</h4>
-  <div class="search-result" *ngIf="searchResultsArtist.length > 0">
+  <!-- Artist -->
+  <div class="search-result" *ngIf="searchResultsArtist">
     <div
       class="search-result-item"
       *ngFor="let item of searchResultsArtist"
       [routerLink]="['/artist', item.id]"
     >
       <div class="search-result-item-image">
-        <img src="{{ item.images[0].url }}" alt="" />
+        <img
+          src="{{
+            item.images[0]?.url
+              ? item.images[0]?.url
+              : 'https://www.logo.wine/a/logo/Spotify/Spotify-Icon-White-Dark-Background-Logo.wine.svg'
+          }}"
+          alt=""
+        />
       </div>
       <div class="group-title d-flex align-items-center">
         <div class="search-result-item-info">
-          <h3 title="{{ item.name }}">
-            {{ item.name | textLength : 15 }}
+          <h3 title="{{ item?.name }}">
+            {{ item?.name | textLength : 15 }}
           </h3>
-          <p>{{ item.type | titlecase }}</p>
+          <p>{{ item?.type | titlecase }}</p>
         </div>
       </div>
     </div>
   </div>
   <!-- Albums -->
   <h4 *ngIf="searchResultsAlbum.length > 0">Albums</h4>
-  <div class="search-result" *ngIf="searchResultsAlbum.length > 0">
+  <div class="search-result" *ngIf="searchResultsAlbum">
     <div
       class="search-result-item"
       *ngFor="let item of searchResultsAlbum"
       [routerLink]="['/album', item.id]"
     >
       <div class="search-result-item-image">
-        <img src="{{ item.images[0].url }}" alt="" />
+        <img src="{{ item.images[0]?.url }}" alt="" />
       </div>
       <div class="group-title d-flex align-items-center">
         <div class="search-result-item-info">
@@ -51,14 +65,14 @@
   </div>
   <!-- Playlists -->
   <h4 *ngIf="searchResultsPlaylist.length > 0">Playlists</h4>
-  <div class="search-result" *ngIf="searchResultsPlaylist.length > 0">
+  <div class="search-result" *ngIf="searchResultsPlaylist">
     <div
       class="search-result-item"
       *ngFor="let item of searchResultsPlaylist"
       [routerLink]="['/playlist', item.id]"
     >
       <div class="search-result-item-image">
-        <img src="{{ item.images[0].url }}" alt="" />
+        <img src="{{ item.images[0]?.url }}" alt="" />
       </div>
       <div class="group-title d-flex align-items-center">
         <div class="search-result-item-info">

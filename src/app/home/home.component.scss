@@ -1,4 +1,11 @@
 .homepage {
   color: var(--light);
   background-color: var(--bg-primary);
+  width: 50%;
+}
+
+@media screen and (max-width: 768px) {
+  .homepage {
+    width: 100%;
+  }
 }

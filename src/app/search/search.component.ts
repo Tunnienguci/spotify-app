@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchService } from '../services/search.service';
+import { Subject } from 'rxjs';
+import { debounceTime } from 'rxjs/operators';
 
 @Component({
   selector: 'app-search',
@@ -12,18 +14,21 @@ export class SearchComponent implements OnInit {
   searchResultsAlbum: any;
   searchResultsPlaylist: any;
   searchItem: string = '';
+
   constructor(private searchServices: SearchService) {}
 
   ngOnInit(): void {}
   search() {
-    if (this.searchItem == '' || this.searchItem == null) {
+    if (this.searchItem) {
+      this.searchServices.search(this.searchItem).subscribe((data) => {
+        this.searchResultsTrack = data['tracks'].items;
+        this.searchResultsArtist = data['artists'].items;
+        this.searchResultsAlbum = data['albums'].items;
+        this.searchResultsPlaylist = data['playlists'].items;
+      });
+    } else {
       this.reset();
     }
-    this.searchServices.search(this.searchItem).subscribe((data: any) => {
-      this.searchResultsArtist = data['artists']['items'];
-      this.searchResultsAlbum = data['albums']['items'];
-      this.searchResultsPlaylist = data['playlists']['items'];
-    });
   }
 
   reset() {

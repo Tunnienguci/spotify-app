@@ -4,6 +4,7 @@ import {
   ActivatedRouteSnapshot,
   RouterStateSnapshot,
   UrlTree,
+  Router,
 } from '@angular/router';
 import { ok } from 'assert';
 
@@ -11,7 +12,7 @@ import { ok } from 'assert';
   providedIn: 'root',
 })
 export class AuthGuard implements CanActivate {
-  constructor() {}
+  constructor(private router: Router) {}
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
@@ -20,7 +21,7 @@ export class AuthGuard implements CanActivate {
     if (token) {
       return true;
     } else {
-      window.location.href = 'http://localhost:4200/';
+      this.router.navigate(['/']);
       return false;
     }
   }

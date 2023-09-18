@@ -1,6 +1,6 @@
-<div class="profile w-50 mx-auto">
+<div class="profile mx-auto">
   <div class="profile__header">
-    <img src="{{ user.images[0].url }}" class="profile__header-img" />
+    <img src="{{ user.images[1]?.url }}" class="profile__header-img" />
     <div class="profile__header-title">
       <h1>{{ user.display_name }}</h1>
       <p *ngIf="user.followers.total > 0">

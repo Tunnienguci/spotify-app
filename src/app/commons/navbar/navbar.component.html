@@ -1,4 +1,4 @@
-<div class="navbar px-5">
+<div class="navbar px-lg-5 px-3">
   <div class="navbar-logo">
     <p class="m-0 font-weight-bold">
       <i class="fa-brands fa-spotify mr-1"></i> Spotify
@@ -7,10 +7,9 @@
   <div class="navbar-menu" *ngIf="isLoggedIn()">
     <a [routerLink]="['home']" routerLinkActive="active">Homepage</a>
     <a [routerLink]="['explore']" routerLinkActive="active">Explore</a>
-    <a [routerLink]="['rank']" routerLinkActive="active">Rank</a>
   </div>
   <button
-    class="btn btn-primary navbar-profile px-5 py-2"
+    class="btn btn-primary navbar-profile px-lg-5 py-lg-2 px-4 py-1"
     (click)="login()"
     *ngIf="!isLoggedIn()"
   >
@@ -29,7 +28,6 @@
     </button>
     <div ngbDropdownMenu>
       <button ngbDropdownItem [routerLink]="['profile']">Profile</button>
-      <button ngbDropdownItem>My Playlist</button>
       <button ngbDropdownItem (click)="logout()">Logout</button>
     </div>
   </div>

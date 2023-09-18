@@ -1,9 +1,10 @@
+<h3>Shows</h3>
 <div class="categories">
-  <div class="category__item" *ngFor="let item of category">
-    <div class="category__item__image">
-      <img src="{{ item.icons[0].url }}" alt="" />
+  <div class="show__item" *ngFor="let item of show">
+    <div class="show__item__image">
+      <img src="{{ item.images[0].url }}" alt="" />
     </div>
-    <div class="category__item__name">
+    <div class="show__item__name">
       <p>{{ item.name }}</p>
     </div>
   </div>

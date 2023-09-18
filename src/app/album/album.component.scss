@@ -32,31 +32,30 @@
         font-weight: 600;
         color: var(--light-success);
       }
-      .artist__body-albums-list {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-gap: 1rem;
-        .artist__body-albums-list-item {
-          background-color: var(--bg-primary);
-          border-radius: 0.5rem;
-          padding: 0.5rem;
-          img {
-            width: 100%;
-            height: 10rem;
-            object-fit: cover;
-            border-radius: 0.5rem;
-          }
-          p {
-            font-weight: 500;
-            margin: 0.5rem 0;
-          }
-          &:hover {
-            cursor: pointer;
-            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
-            transform: scale(1.05);
-            color: var(--light-success);
-            filter: brightness(0.8);
-          }
+      .top__track-item {
+        background-color: var(--bg-primary);
+        border-radius: 10px;
+        padding: 0.5rem;
+        margin: 0.5rem 0;
+        display: flex;
+        align-items: center;
+        .top__track-item-number {
+          width: 5rem;
+          font-size: 3rem;
+          color: var(--light-success);
+          font-weight: 700;
+          padding: 0 1rem;
+        }
+        .top_track-item-img {
+          width: 4rem;
+          height: 4rem;
+          object-fit: cover;
+          border-radius: 10px;
+        }
+        &:hover {
+          transform: scale(1.02);
+          cursor: pointer;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
       }
     }
